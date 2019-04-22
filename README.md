@@ -21,6 +21,12 @@ We are going to:
 3. Create a Cloud Pub/Sub `topic` for Cloud Scheduler to publish to.
 4. Create a Cloud Pub/Sub `subscription` that will subscribe to the `topic` we created, and invoke our Cloud Run `service` using a `service account` with the _Google Run Invoker_ privilage. 
 
+## Why Ruby?
+
+TL;DR I work at Shopify now. 
+
+You can use pretty much any language you want. See the Cloud Run docs.
+
 ## Steps to make this work
 
 Keep in mind you can go into the console to setup most of this, but where possible we'll use the `gcloud` command line tool. 
