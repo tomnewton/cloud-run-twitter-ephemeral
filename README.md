@@ -39,14 +39,14 @@ gcloud projects create my-example-project-id --name="my test project" --set-as-d
   gcloud pubsub topics create run-trigger
 ```
 
-5. Go to developers.twitter.com and create an application, and get your authentication credentials. 
+5. Go to developers.twitter.com and create an application, and get your authentication credentials. You'll need these in Step 7.
 
 6. Build this project and ship it to Google Container Registry. You must provide Environment Variables for the following keys: 
 ```bash
   gcloud builds submit --tag gcr.io/[PROJECT-ID]/[IMAGE]
 ```
 
-7. Now you'll actually setup the Cloud Rub service. 
+7. Now you'll actually setup the Cloud Rub service. You'll need to set the following ENV variables.
 
 - TWITTER_CONSUMER_KEY
 - TWITTER_CONSUMER_SECRET
@@ -60,6 +60,7 @@ gcloud projects create my-example-project-id --name="my test project" --set-as-d
 
 ```bash
   gcloud config set run/region us-central1
+  
   gcloud beta run deploy [YOUR_SERVICE_NAME] --image gcr.io/tn-test-project-99/runservice --update-env-vars RUN_PROJECT_ID=YOUR_PROJECT_ID,TWITTER_CONSUMER_KEY=VALUE1,TWITTER_CONSUMER_SECRET=VALUE2,TWITTER_ACCESS_TOKEN=VALUE3,TWITTER_ACCESS_TOKEN_SECRET=VALUE4 --quiet
 ```
 
@@ -86,4 +87,4 @@ gcloud pubsub subscriptions create [SUBSCRIPTION_NAME] --topic run-trigger --top
 
 10. Go [here](https://console.cloud.google.com/cloudscheduler) and create a new job. Give it a name, and choose `pubsub` as the target, and enter in our pubsub topic name from step 4, which we called 'run-trigger'. Go ahead and setup a schedule, something like: '0 9 * * 1' should work - 9am every Monday morning.
 
-11. You're done.
+11. You're done. You can manually trigger the Scheduler [here](https://console.cloud.google.com/cloudscheduler). Use the log viewer [here](https://console.cloud.google.com/logs/viewer) to see the log output. 
