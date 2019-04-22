@@ -2,13 +2,13 @@
 
 ### What does this do? 
 
-This is a ruby script that is runnable on Google Cloud Platform's new service Google Cloud Run. This repo demonstrates how you can create an inexpesive scheduled task to remove tweets from your timeline that are a certain age. 
+This repo demonstrates how you can create an inexpesive scheduled task to remove tweets from your timeline that are a certain age. This is accomplished via a ruby script that is packaged for Google Cloud Platform's new service [Google Cloud Run](https://cloud.google.com/run/). 
 
 To accomplish this we make use of the following services: 
 
-- Google Cloud Scheduler - to send a message to a topic periodically
-- Google Cloud Pub/Sub - to create a topic and and subscription. The subscription calls our Cloud Run service.
-- Google Cloud Run - to define our task, and make it available as a service.
+- [Google Cloud Scheduler](https://cloud.google.com/scheduler/) - to send a message to a topic periodically
+- [Google Cloud Pub/Sub](https://cloud.google.com/pubsub/) - to create a topic and and subscription. The subscription calls our Cloud Run service.
+- [Google Cloud Run](https://cloud.google.com/run/) - to define our task, and make it available as a service.
 
 We'll use the `gcloud` command line tool as much as possible to get this all running. 
 
@@ -66,7 +66,7 @@ gcloud projects create my-example-project-id --name="my test project" --set-as-d
 
 When this has finished you'll see output from the `gcloud` tool that looks like: 
 
-```bash
+```
 Deploying container to Cloud Run service [runservice] in project [tn-test-project-99] region [us-central1]
 ✓ Deploying new service... Done.                                                                                                                                                                                            
   ✓ Creating Revision...                                                                                                                                                                                                    
