@@ -6,9 +6,9 @@ This is a ruby script that is runnable on Google Cloud Platform's new service Go
 
 To accomplish this we make use of the following services: 
 
-- Google Cloud Scheduler
-- Google Cloud Pub/Sub
-- Google Cloud Run
+- Google Cloud Scheduler - to send a message to a topic periodically
+- Google Cloud Pub/Sub - to create a topic and and subscription. The subscription calls our Cloud Run service.
+- Google Cloud Run - to define our task, and make it available as a service.
 
 We'll use the `gcloud` command line tool as much as possible to get this all running. 
 
