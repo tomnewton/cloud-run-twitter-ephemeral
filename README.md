@@ -12,7 +12,18 @@ To accomplish this we make use of the following services:
 
 We'll use the `gcloud` command line tool as much as possible to get this all running. 
 
-## How do I run this? 
+## Big picture
+
+We are going to: 
+
+1. Create a Cloud Run `service` that is invokable. This service will NOT be publicly accessible. 
+2. Create a `job` in Cloud Scheduler to periodically ( once a week ) push a message to a Pub/Sub topic.
+3. Create a Cloud Pub/Sub `topic` for Cloud Scheduler to publish to.
+4. Create a Cloud Pub/Sub `subscription` that will subscribe to the `topic` we created, and invoke our Cloud Run `service` using a `service account` with the _Google Run Invoker_ privilage. 
+
+## Steps to make this work
+
+Keep in mind you can go into the console to setup most of this, but where possible we'll use the `gcloud` command line tool. 
 
 1. Install the `gcloud` command line tool. Then run: 
 
