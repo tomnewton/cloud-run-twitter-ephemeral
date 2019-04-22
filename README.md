@@ -92,7 +92,7 @@ Done.
 Service [runservice] revision [runservice-00001] has been deployed and is serving traffic at https://runservice-xtu6b5owbq-uc.a.run.app
 ```
 
-You'll need the url `https://runservice-xtu6b5owbq-uc.a.run.app` at the end for step 9.
+You'll need the url that resembles `https://runservice-xtu6b5owbq-uc.a.run.app` at the end for step 9.
 
 8. Go [here](https://console.cloud.google.com/iam-admin/serviceaccounts) and create a new service account. Call it `cloud-run-invoker`, click create, then give it the `role` of `Cloud Run Invoker` in the drop down list. You don't need to create any keys for this account. Now copy the email address associated with the new service account which should look something like: cloud-run-invoker@[project-id].iam.gserviceaccount.com	
 
