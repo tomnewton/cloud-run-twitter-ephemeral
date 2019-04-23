@@ -2,6 +2,8 @@
 
 ### What does this do? 
 
+The guts are in [app.rb](https://github.com/tomnewton/cloud-run-twitter-ephemeral/blob/master/app.rb)
+
 This repo demonstrates how you can create an inexpesive scheduled task to remove tweets from your timeline that are a certain age. This is accomplished via a ruby script that is packaged for Google Cloud Platform's new service [Google Cloud Run](https://cloud.google.com/run/). 
 
 To accomplish this we make use of the following services: 
